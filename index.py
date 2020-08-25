@@ -1,1 +1,1 @@
-ergevgev3ve
+print('From')
