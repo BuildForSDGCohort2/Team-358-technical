@@ -7,9 +7,9 @@
 
 
 
-## Prerequisites 
+## Description 
 
-<p>  Facial/Ascoustic Sound Wave And Gesture Detection <b>FASGD-III</b> is a security application that performs 
+<p>  Facial/Ascoustic Sound Wave And Gesture Detection <b>FASGD-III</b> is a security application that performs the following which are: 
 
 <ul>
 
@@ -19,12 +19,29 @@
 
 
 </ul>
-</p>   
+
+</p>
+
+<h4> Facial Recognition <h4>
+
+<p style="margin-left: 10px;"> A facial recognition device is a device that takes an image or a video of a human face, and compares it to other images in a database. When using 
+facial recognition, several pictures of the subject must have been taken at different angles and usually with different facial expressions then stored in a database. </p>
+
+<p style="margin-left: 10px;"> In the security system, the facial recognition model is the first application to perform its functions, because the cameras exposed are always accepting frames from the outside world. 
+
+The cameras which are positioned at specific areas, scans the face seen in view to make predictions on if the identified persons matches the trained facec stored in its database.
+
+Thus, if the subject face has been registered on the system like that of the owner and it runs a scan nothing really happens. However, if the subject's face has not been registered on the security system and it runs a scan, this causes the system to either sound an alarm or send notification to the owner's mobile application. 
+
+ </p>
 
 
 | Command | Description  | 
 |------------- | ------------- | 
 | git status | List all new or modified files |
+
+
+## Prerequisites 
 
 
 
