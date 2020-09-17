@@ -9,16 +9,7 @@
 
 ## Description 
 
-<p> First testing </p>
-<div>
-    <img src="static/images/pred1.jpg" width="800px" height="400px">
-</div>
-
-
-<p> Second testing </p>
-![Alt text](static/images/pred1.jpg?raw=true "Second Image")
-
-<p>  Facial/Ascoustic Sound Wave And Gesture Detection <b>FASGD-III</b> is a security application that performs the following which are: 
+<p>  Facial/Acoustic Sound Wave And Gesture Detection <b>FASGD-III</b> is a security application that performs the following which are: 
 
 <ul>
 
@@ -33,17 +24,35 @@
 
 <h3> Facial Recognition </h3>
 
+<div>
+    <img src="static/images/pred1.jpg" width="800px" height="400px">
+</div>
+
 <p style="margin-left: 10px;"> A facial recognition device is a device that takes an image or a video of a human face, and compares it to other images in a database. When using 
 facial recognition, several pictures of the subject must have been taken at different angles and usually with different facial expressions then stored in a database. </p>
+
+
+<h3> Gesture Recognition </h3> 
+
+<div>
+    <img src="static/images/pred2.jpg" width="800px" height="400px">
+</div>
+
+<p> Gesture recognition is .......  </p> 
+
+<h4> Null Readings </h4>
+<div>
+    <img src="static/images/null.jpg" width="800px" height="400px">
+</div>
+
+<p> This occurs when the frames are not reading ........    </p>
+
+
 
 <h3> Sound Recognition </h3>
 
 <p>  Sound recognition is ..... </p>
 
-
-<h3> Gesture Recognition </h3> 
-
-<p> Gesture recognition is .......  </p> 
 
 
 <h3> Working Principle </h3> 
