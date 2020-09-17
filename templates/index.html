@@ -1,36 +1,69 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-    <head> 
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title> SECURITY INFO </title> 
+<!---
+# Author: Mbonu Chinedum Endurance
+# Team: TEAM-358-GROUP-A
+# Description: FASGD-III (SECURITY PAGE)
+# Program: ANDELA BUILD FOR SDG COHORT-2 2020
+# Country: Nigeria
+# Date Created: 27-August-2020 "Buhari Regime"
+# Date Modified:
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> SECURITY INFO </title>
 
         <!-- Adding the stylesheet-->
-        <link rel="stylesheet" href="../static/css/main.css"> 
+        <link rel="stylesheet" href="../static/css/main.css">
         <!-- Adding Google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-    </head> 
+    </head>
 
     <!-- Creating the body tag -->
-    <body> 
+    <body>
         <!-- Creating the first section -->
-        <section class="first-section"> 
+        <section class="first-section">
             <!--Creating the first header -->
-            <h1 id="first-heading"> SECURITY INFO </h1> 
+            <h1 id="first-heading"> SECURITY INFO </h1>
         </section>
 
         <!--Creating the second section -->
-        <section class="second-section"> 
-            <p> The Live video feed below captures frame from the camera, perfoms a <b>Facial Recognition</b>, <b>Gesture Recognition</b> and takes in the users <b> Input Voice </b> for 
-            verification. If the input data is matched with the data on its data base, it <b> Authenticates </b> the user, and if <b>NOT</b> it sounds an alarm and sends the <b>Frames</b> 
-            of the <b>Unidentified</b> person to the <b>Original</b> User. </p>  
+        <section class="second-section">
+            <p> The Live video feed below captures frame from the camera, perfoms a <b>Facial Recognition</b>, <b>Gesture Recognition</b> and takes in the users <b> Input Voice </b> for
+            verification. If the input data is matched with the data on its data base, it <b> Authenticates </b> the user, and if <b>NOT</b> it sounds an alarm and sends the <b>Frames</b>
+            of the <b>Unidentified</b> person to the <b>Original</b> User. </p>
+            
+            <h1 class="timer-class"><span id="timerMins">00</span>:<span id="timerSeconds">00</span>:<span id="timerTens">00</span></h1>
 
-            <br> 
-            <h3> Camera One </h3> 
-            <img id="video-frames" src="{{ url_for('video_feed') }}"  alt="Camera1">  <br> <br> <br> 
+        </section>
 
-        </section>  
+        <section class="voice-container">
+          <img id="video-frames" src="{{ url_for('gestureFeed') }}"  alt="Camera1">  <br>
 
-    </body> 
-</html> 
 
+        <div class="container" id="container">
+
+            <div class="circle"></div>
+
+            <p id="text"></p>
+
+            <div class="pointer-container">
+              <span class="pointer"></span>
+            </div>
+
+            <div class="gradient-circle"></div>
+
+          </div>
+
+
+        </section>
+        <br> <br> <br>
+
+
+        <!--Adding javascript-->
+        <script src="../static/javascript/script.js">  </script>
+    </body>
+</html>
