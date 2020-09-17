@@ -22,7 +22,7 @@
 
 </p>
 
-<h4> Facial Recognition <h4>
+<h3> Facial Recognition </h3>
 
 <p style="margin-left: 10px;"> A facial recognition device is a device that takes an image or a video of a human face, and compares it to other images in a database. When using 
 facial recognition, several pictures of the subject must have been taken at different angles and usually with different facial expressions then stored in a database. </p>
