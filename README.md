@@ -26,7 +26,7 @@
 
 <div>
     <img src="static/images/pred1.jpg" width="800px" height="400px">
-</div>
+</div> <br> 
 
 <p style="margin-left: 10px;"> A facial recognition device is a device that takes an image or a video of a human face, and compares it to other images in a database. When using 
 facial recognition, several pictures of the subject must have been taken at different angles and usually with different facial expressions then stored in a database. </p>
@@ -36,14 +36,14 @@ facial recognition, several pictures of the subject must have been taken at diff
 
 <div>
     <img src="static/images/pred2.jpg" width="800px" height="400px">
-</div>
+</div> <br>
 
 <p> Gesture recognition is .......  </p> 
 
 <h4> Null Readings </h4>
 <div>
     <img src="static/images/null.jpg" width="800px" height="400px">
-</div>
+</div> <br>
 
 <p> This occurs when the frames are not reading ........    </p>
 
