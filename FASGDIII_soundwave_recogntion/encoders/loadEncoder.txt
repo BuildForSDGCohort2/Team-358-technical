@@ -1,0 +1,25 @@
+# Instructions on how to load the label encoder  
+# here we used numpy to save the encoders for the sound wave data and they 
+# compromise of the X_scaler and label_scaler 
+
+# To load the label encoder model, use the following 
+$ import numpy as np 
+$ from sklearn.model_selection import LabelEncoder, StandardScaler 
+
+$ scaler = StandardScaler() 
+$ lb = LabelEncoder() 
+
+# Setting the filename 
+$ filename = "label_encoder.npy" 
+
+# loading the encoder into memory 
+$ encoders = np.load(filename) 
+
+### Recall that encoders ==> (scaler, lb) 
+## Thus scaler = encoders[0]   And  lb = encoders[1] 
+
+### Thanks!!!!!!... 
+
+
+
+

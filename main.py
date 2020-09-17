@@ -1,180 +1,156 @@
-#!/usr/bin/env python3 
+#!/usr/bin/env python3
+
+# Author: Mbonu Chinedum Endurance
+# Team: TEAM-358-GROUP-A
+# Description: FASGD-III (Main Server)
+# Program: ANDELA BUILD FOR SDG COHORT-2 2020
+# Country: Nigeria
+# Date Created: 27-August-2020 "Buhari Regime"
+# Date Modified:
 
 
-# Importing the necessary modules 
-import os 
+# Importing the necessary modules
 import cv2
-import time 
-import joblib
-import imutils 
-import numpy as np
-import tensorflow as tf
-from imutils.video import VideoStream, FPS
-import tensorflow as tf 
-from keras.models import Sequential
-from keras.layers.normalization import BatchNormalization
-from keras.layers.core import Activation
-from keras.layers.core import Flatten
-from keras.layers.core import Dropout
-from keras import backend as K
-from imutils import paths 
-from tensorflow.keras.optimizers import Adam 
-from tensorflow.keras.preprocessing.image import img_to_array, ImageDataGenerator 
-from sklearn.model_selection import train_test_split 
-from sklearn.preprocessing import StandardScaler, LabelEncoder 
-from tensorflow.keras.optimizers import SGD 
-from tensorflow.keras.layers import Flatten, MaxPool2D, MaxPooling2D
-from tensorflow.keras.utils import to_categorical 
-from tensorflow.keras.layers import Conv2D, Dense, Activation, Dropout 
+import time
+import imutils
+from FASGDIII_facial_recognition.facial_recognition import FacialPrediction
+from FASGDIII_gesture_recognition.gesture_recognition import GesturePredict
 
 
-
-# Getting the path to the seralized model and label files
-# modelPath = "model/model3.h5"
-modelPath = "model/GestureControl.h5"
-# picklefile = "model/gestureLabels.pb"
-
-# Creating the label encoder object
-# lb = LabelEncoder() 
-
-# Output features
-numclasses = 4
-
-# Creating the classes
-classes = ['peace', 'three', 'thumbsup', 'unknown']
+# Creating a common class
+def make_face_prediction(input_image):
+    # Loading the image into memory
+    image = cv2.imread(input_image)
+    # Passing the saved image into the prediction module
+    (single_frame, pred_value) = FacialPrediction(image).make_predictions()
+    # Placing the predicted value inside the image for just a single image.
+    cv2.putText(single_frame, pred_value, (9, 51), cv2.FONT_HERSHEY_SIMPLEX, 0.72, (0, 255, 0), 2)
+    # Saving the image to disk
+    cv2.imwrite("Predicted.jpg", single_frame)
 
 
-# Building the VGGNet model
-class SmallerVGGNet:
-    @staticmethod
-    def build(width, height, depth, classes, finalAct="softmax"):
-        # initialize the model along with the input shape to be
-        # "channels last" and the channels dimension itself
-        model = Sequential()
-        inputShape = (height, width, depth)
-        chanDim = -1
+# Creating a class for the main function
+class MainFunction:
+    def __init__(self):
+        # Creating the first function to yield each captured frames as
+        # a value returned back from the function
+        self.running = True
 
-        # CONV => RELU => POOL
-        model.add(Conv2D(32, (3, 3), padding="same",
-                         input_shape=inputShape))
-        model.add(Activation("relu"))
-        model.add(BatchNormalization(axis=chanDim))
-        model.add(MaxPooling2D(pool_size=(3, 3)))
-        model.add(Dropout(0.25))
+    # Creating the function for performing the facial recognition.
+    def Recognition(self):
+        # Capturing the video frames from the webcam.
+        """
+        Note that we can include ip-cameras into OPENCV which would be able
+        To Grab frames from IOT web cameras for analysis.
+        Here, we are using the frames captured from the webcam hosted or connected
+        to the server. THANKS......
+        """
+        vs = cv2.VideoCapture(0)
+        # Initialize the weight for running average
+        aWeight = 0.5
 
-        # (CONV => RELU) * 2 => POOL
-        model.add(Conv2D(64, (3, 3), padding="same"))
-        model.add(Activation("relu"))
-        model.add(BatchNormalization(axis=chanDim))
-        model.add(Conv2D(64, (3, 3), padding="same"))
-        model.add(Activation("relu"))
-        model.add(BatchNormalization(axis=chanDim))
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-        model.add(Dropout(0.25))
+        # Getting the region of interest (ROI) co-ordinates
+        top, right, bottom, left = 8, 473, 221, 791  # y1, x1, y2, x2
 
-        # (CONV => RELU) * 2 => POOL
-        model.add(Conv2D(128, (3, 3), padding="same"))
-        model.add(Activation("relu"))
-        model.add(BatchNormalization(axis=chanDim))
-        model.add(Conv2D(128, (3, 3), padding="same"))
-        model.add(Activation("relu"))
-        model.add(BatchNormalization(axis=chanDim))
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-        model.add(Dropout(0.25))
+        # Initialize the number of frames to be a zero value
+        num_frames = 0
 
-        # first (and only) set of FC => RELU layers
-        model.add(Flatten())
-        model.add(Dense(1024))
-        model.add(Activation("relu"))
-        model.add(BatchNormalization())
-        model.add(Dropout(0.5))
+        # While looping
+        while self.running:
+            # Reading the frames
+            ret, frame = vs.read()
+            time.sleep(0.05)
 
-        # softmax classifier
-        model.add(Dense(classes))
-        model.add(Activation(finalAct))
+            # Performing the facial recognition
+            (frame, pred_name) = FacialPrediction(frame).make_predictions()
 
-        # return the constructed network architecture
-        return model
+            # Checking is a None value was returned
+            if pred_name.split(":")[0] == "unknown":
+                print(pred_name)
+                # Alert,,,, an unknown face has been detected...
+                pass
 
+            # Checking if the prediction is chinedu
+            if pred_name.split(":")[0] == "chinedu":
+                saved_clone = frame.copy()
+                cv2.putText(saved_clone, pred_name, (9, 51),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.72, (0, 255, 0), 2)
+                cv2.imwrite("predicted.jpg", saved_clone)
+                pass
 
+            # Resize the frame
+            frame = imutils.resize(frame, width=800)
 
-# Creating an instance of the VGGNet model
-model = SmallerVGGNet().build(96, 96, 1, numclasses)
+            # flip the frame so that it is not the mirror view
+            frame = cv2.flip(frame, 1)
 
+            # Clone the frame
+            clone = frame.copy()
 
-# Compiling the model
-model.compile(optimizer='adam',
-              loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
-              metrics=['accuracy'])
+            # Get the height and width of the frame
+            (height, width) = frame.shape[:2]
 
-# Loading the trained model weight file
-model.load_weights(modelPath)
+            # Get the ROI
+            roi = frame[top:bottom, right:left]
 
-# loading the serialized pickle file
-# lb = joblib.load(picklefile)
+            # Convert the roi to grayscale and blur it
+            gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+            gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
-# Initialize the video stream and allow the camera sensor to warm up
-print("[INFO] >> Starting the video stream.");
-vs = VideoStream(src=0).start();
+            # Setting the font
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            result = "null"
 
-# Sleeping for 2 mili seconds
-time.sleep(0.2)
-
-# Starting the FPS counter
-fps = FPS().start()
-
-# loop over the frames from the video file stream
-while True:
-    # Grabbing the frames from the threaded video stream and resize it
-    # to 500px (to speed up the processing)
-    frame = vs.read()
-    frame = imutils.resize(frame, width=500)
-
-    # Cropping image
-    cropped = frame[1:197, 285:493]  #y1, y2, x1, x2
-    
-    # Draw rect
-    cv2.rectangle(frame, (285, 1), (493, 197), (255, 255, 0), 2)
-    cv2.putText(frame, "Place your hands", (287, 220),
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-    
-    # Convert the input from (1) BGR to grayscale
-    gray = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
-
-    # Reshaping to dimension of (96, 96)
-    gray = cv2.resize(gray, (96, 96), interpolation=cv2.INTER_AREA)
-    img = img_to_array(gray)
-
-    # Expanding dimensions
-    img = np.expand_dims(img, axis=0)
+            # To get the background, keep looking till a threshold is reached
+            # So that our running average model gets calibrated
+            if num_frames < 40:
+                GesturePredict(gray).run_avg(aWeight)
 
 
-    # Making predictions
-    pred = model.predict(img)
-    predClass = np.argmax(pred)
-    
-    # Getting the results
-    result = classes[predClass]
-    print(result) 
+            else:
+                # Segment the hand region
+                hand = GesturePredict(gray).segment()
+                # Checking if the hand region is segmented
+                if hand is not None:
+                    # if YES, UNPACK the thresholded image and segment the region
+                    (thresholded, segmented) = hand
 
-    # Describing the font to be used
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    
-    # Using put-text method to insert the predicted value on the video
-    cv2.putText(frame, result, (9, 25), font, 0.72,
-                                     (0, 0, 255), 2)
+                    # Draw the segmented region and display the frame
+                    cv2.drawContours(clone, [segmented + (right, top)], -1, (0, 0, 255))
 
-    # Displaying the image
-    cv2.imshow("Image", frame)
-    cv2.imshow("Cropped", cropped)
+                    # Making predictions
+                    result = GesturePredict(gray).make_predictions(thresholded)
+                    #
+                    if num_frames == 200:
+                        num_frames = 0
 
-    # Existing
-    key = cv2.waitKey(1) & 0xFF;
-    if key == ord("q"):
-        break
-    
-# Closing up and cleaning up
-cv2.destroyAllWindows(); 
-    
+            # Drawing the segmented hand
+            cv2.rectangle(clone, (left, top), (right, bottom), (0, 255, 0), 2)
+            cv2.putText(clone, result, (9, 25), font, 0.72, (0, 255, 0), 2)
+            cv2.putText(clone, pred_name, (9, 51), font, 0.72, (0, 255, 0), 2)
 
+            # cv2.imshow("Image", clone)
+            # cv2.waitKey(0)
 
+            # Increasing the values for the number of frames by one
+            num_frames += 1
+
+            # Using puttext method for inserting text on video
+            # cv2.putText(frame, "Hello Chinedum", (9, 25), font, 0.72, (0, 0, 255), 2)
+            """
+            The frames used here would be parsed into functions or classes which would
+            perform analysis on the frames to give us the predicted values before encoding
+            and sending/ yielding it out to the webserver for browser viewing. Thanks!!!!!!
+            """
+            # Saving each captured frame to disk as an image file
+            ret, jpeg = cv2.imencode(".jpg", clone)
+            img = jpeg.tobytes()
+
+            # Sending back each frame captured back as a returned value for the
+            # Created function
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + img + b'\r\n\r\n')
+
+        # Closing and cleaning up
+        vs.release()
+        vs.close()
