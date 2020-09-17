@@ -15,7 +15,7 @@
 
 <li> Facial Recognition </li>
 <li> Sound Recognition </li>
-<li> Gesture Recognition <li>
+<li> Gesture Recognition </li>
 
 
 </ul>
@@ -26,6 +26,18 @@
 
 <p style="margin-left: 10px;"> A facial recognition device is a device that takes an image or a video of a human face, and compares it to other images in a database. When using 
 facial recognition, several pictures of the subject must have been taken at different angles and usually with different facial expressions then stored in a database. </p>
+
+<h3> Sound Recognition </h3>
+
+<p>  Sound recognition is ..... </p>
+
+
+<h3> Gesture Recognition </h3> 
+
+<p> Gesture recognition is .......  </p> 
+
+
+<h3> Working Principle </h3> 
 
 <p style="margin-left: 10px;"> In the security system, the facial recognition model is the first application to perform its functions, because the cameras exposed are always accepting frames from the outside world. 
 
