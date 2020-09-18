@@ -121,12 +121,35 @@ Thus, if the subject face has been registered on the system like that of the own
 ## Installation 
 
 #### Using Anaconda 
-<p> Activating anaconda environments </p>
+<p> Download <b>Anaconda </b> Package manager and install it on your os distribution. After install, follow the instructions below in setting up your environment for this project. </p> <br>
 
+
+<p> <b> First Step:</b> Activate ml environment </p>
+<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed and necessary for build your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
+
+<p> Create The ML Environment </p>
+| Command | Description  | 
+|------------- | ------------- | 
+| <b>$</b> conda env create --file ProjectEnvironment.yaml | This would create a new Anaconda environment with the name called <b>ml</b>. |
+
+<br> 
+
+<p> List All Environment </p> 
+| Command | Description  | 
+|------------- | ------------- | 
+| <b>$</b> conda env list | This would list all the created Anaconda environments. |
+
+<b> OR </b> 
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>$</b> conda activate ml | This would switch your anaconda environment into <b>ml</b> environment |
+| <b>$</b> conda info --envs | This would list all the Anaconda environments. |
+
+<br> 
+<p> Activate <b>ml</b> Environment </p> 
+| Command | Description  | 
+|------------- | ------------- | 
+| <b>$</b> conda activate ml | This command would activate <b>ml</b> environment |
 
 
 
