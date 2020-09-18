@@ -155,6 +155,15 @@ $ ifconfig down
 
 ```
 
+```console
+$ ifconfig down
+
+# conda info --envs 
+
+#conda info 
+
+```
+
 
 - #### Activate ml Environment 
 
