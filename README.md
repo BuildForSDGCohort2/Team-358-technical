@@ -145,7 +145,7 @@ Andela@team-358:~$ conda info --envs
 
 ```
 
-#### Output of the listed anaconda environments 
+- #### Output of the listed anaconda environments 
 
 ```console 
 base                  *  /home/Andela/anaconda3
