@@ -34,20 +34,39 @@ The dataset whose comprises of various images is trained on a deep learning or m
 Once the machine learning classifier learns this mapping function, a serialized model weight file is generated and saved, which is then used to make live predictions on the individual faces.</p>
 
 
-<h3> Gesture Recognition </h3> 
+<h3> Hand Gesture Recognition </h3> 
 
 <div>
     <img src="static/images/pred2.jpg" width="800px" height="400px">
 </div> <br>
 
-<p> Gesture recognition is .......  </p> 
+<p> Hand gesture recognition is a topic in computer science and language technology with the goal of interpreting human hand gestures via machine learning algorithms. This approach is made using cameras and computer vision algorithms to interpret sign language. 
+With this camera, one can generate a depth map of what is being seen through the camera at short range, and use the data to approximate a 3D representation of what is being seen.  <br>
+
+In the hand gesture recognition, a single camera is used to explore the vision-based application of the security system. This security system would have had the user customize various functions of a number of different hand gestures. For example, the hang gestures functions could be the in following pattern: 
+ <ul>
+  <li> <b>Gesture A: </b>  Disable Alarm </li> 
+  <li> <b> Gesture B:</b>  Unlock the security system </li>
+  <li> <b> Gesture C: </b> Call the police or Dial 911 </li>  
+ </ul>
+
+Thus, this functions would be executed when a physical implementation is performed. 
+
+The hand gesture recognition works when a motion sensor perceives and interprets movements as the basic source of data input. 
+<ul>
+  <li> Firstly, the camera feeds the image data into a sensing device that is connected to the system. </li> 
+  <li> Secondly, the system identifies meaningful gestures from an established gesture library where each gesture is matched to a system command by the user. </li> 
+  <li> Thirdly, the system connects each registered hand gesture, interprets the gesture and uses the library to identify meaningful gestures that match the library. Finally, once the gesture has been interpreted, the system executes the command or function correlated to the specific gesture. <li>
+
+</ul> 
+</p> 
 
 <h4> Null Readings </h4>
 <div>
     <img src="static/images/null.jpg" width="800px" height="400px">
 </div> <br>
 
-<p> This occurs when the frames are not reading ........    </p>
+<p> This occurs when the frames are not reading and the camera is closed. </p>
 
 
 
