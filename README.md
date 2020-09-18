@@ -87,9 +87,7 @@ Thus, if the subject face has been registered on the system like that of the own
  </p>
 
 
-| Command | Description  | 
-|------------- | ------------- | 
-| git status | List all new or modified files |
+
 
 
 ## Prerequisites 
@@ -97,6 +95,13 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 ## Installation 
+
+<p> Activating anaconda environments </p>
+
+
+| Command | Description  | 
+|------------- | ------------- | 
+| $conda activate ml | This would switch your anaconda environment into <b>ml</b> environment |
 
 
 ## Running The Application 
