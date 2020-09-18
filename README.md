@@ -122,33 +122,29 @@ Thus, if the subject face has been registered on the system like that of the own
 
 #### Using Anaconda 
 
-<p> Download <b>Anaconda </b> Package manager and install it on your os distribution. After install, follow the instructions below in setting up your environment for this project. </p> <br>
+<p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After install, follow the instructions below for setting up your environment for this project. </p> <br>
 
-
-<p> <b> First Step:</b> Activate ml environment </p>
-<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed and necessary for building your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
+<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed for building your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
 
 #### Create The ML Environment 
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b> $ conda env create --file ProjectEnvironment.yaml </b> | This would create a new Anaconda environment with the name called <b>ml</b>. |
+| <b> $ conda env create --file ProjectEnvironment.yaml </b> | This would create a new <b>Anaconda</b> environment with the name called <b>ml</b>. |
 
-<br> 
 
-#### List All Environment  
+#### List All Environments  
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b> $ conda env list </b> | This would list all the created Anaconda environments. |
+| <b> $ conda env list </b> | This would list all the created <b>Anaconda</b> environments. |
 
 <b> OR </b> 
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b> $ conda info --envs </b> | This would list all the Anaconda environments. |
+| <b> $ conda info --envs </b> | This would list all the <b>Anaconda</b> environments. |
 
-<br> 
 
 #### Activate ml Environment 
 
