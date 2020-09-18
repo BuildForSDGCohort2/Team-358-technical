@@ -128,7 +128,7 @@ Thus, if the subject face has been registered on the system like that of the own
 <p> <b> First Step:</b> Activate ml environment </p>
 <p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed and necessary for build your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
 
-<p> Create The ML Environment </p>
+#### Create The ML Environment 
 
 | Command | Description  | 
 |------------- | ------------- | 
@@ -136,11 +136,11 @@ Thus, if the subject face has been registered on the system like that of the own
 
 <br> 
 
-<p> List All Environment </p> 
+#### List All Environment  
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>$</b> conda env list | This would list all the created Anaconda environments. |
+| <b>$ conda env list </b>| This would list all the created Anaconda environments. |
 
 <b> OR </b> 
 
@@ -149,7 +149,8 @@ Thus, if the subject face has been registered on the system like that of the own
 | <b>$</b> conda info --envs | This would list all the Anaconda environments. |
 
 <br> 
-<p> Activate <b>ml</b> Environment </p> 
+
+#### Activate ml Environment 
 
 | Command | Description  | 
 |------------- | ------------- | 
