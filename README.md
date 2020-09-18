@@ -146,23 +146,25 @@ Thus, if the subject face has been registered on the system like that of the own
 | <b> $ conda info --envs </b> | This would list all the <b>Anaconda</b> environments. |
 
 
-```bash
+```shell
 $ ifconfig down
 
 # conda info --envs 
 
-#conda info 
+foo@bar:~$ conda info --envs 
 
 ```
 
 ```console
 $ ifconfig down
 
-# conda info --envs 
+foo@bar:~$ conda info --envs 
 
 #conda info 
 
 ```
+
+
 
 
 - #### Activate ml Environment 
