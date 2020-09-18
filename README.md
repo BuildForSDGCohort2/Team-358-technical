@@ -92,16 +92,47 @@ Thus, if the subject face has been registered on the system like that of the own
 
 ## Prerequisites 
 
+<p> The following packages and modules are needed for the application to work on your system:
+  <ul>
+      <li> Python 3.6.6 </li>
+      <li> <b> Anaconda</b> Package Manager </li> 
+      <li> Face-recognition module </li> 
+      <li> Flask </li> 
+      <li> Flask-SQLAlchemy </li> 
+      <li> Imutils </li> 
+      <li> Keras </li> 
+      <li> Librosa (Sound Wave Library) </li> 
+      <li> Scikit-learn </li> 
+      <li> Scipy </li> 
+      <li> Sklearn </li> 
+      <li> SoundFile </li> 
+      <li> Tensorflow </li> 
+      <li> Werkzeug </li> 
+      <li> Joblib </li> 
+      <li> FFmpeg </li> 
+
+  </ul>
+
+
+</p>
+
 
 
 ## Installation 
 
+#### Using Anaconda 
 <p> Activating anaconda environments </p>
 
 
 | Command | Description  | 
 |------------- | ------------- | 
 | <b>#</b> conda activate ml | This would switch your anaconda environment into <b>ml</b> environment |
+
+
+
+#### Using Virtual Environment 
+<p> Using the virtual environment .......  </p>
+
 
 
 ## Running The Application 
