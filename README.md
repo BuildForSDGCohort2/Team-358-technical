@@ -126,7 +126,7 @@ Thus, if the subject face has been registered on the system like that of the own
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>#</b> conda activate ml | This would switch your anaconda environment into <b>ml</b> environment |
+| <b>$</b> conda activate ml | This would switch your anaconda environment into <b>ml</b> environment |
 
 
 
