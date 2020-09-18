@@ -118,9 +118,9 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 
-## Installation 
+# Installation 
 
-#### Using Anaconda 
+## Using Anaconda 
 
 <p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After install, follow the instructions below for setting up your environment for this project. </p> <br>
 
@@ -154,7 +154,7 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 
-#### Using Virtual Environment 
+## Using Virtual Environment 
 
 <p> Using the virtual environment .......  </p>
 
