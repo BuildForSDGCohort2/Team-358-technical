@@ -145,6 +145,14 @@ Andela@team-358:~$ conda info --envs
 
 ```
 
+#### Output of the listed anaconda environments 
+
+```console 
+base                  *  /home/Andela/anaconda3
+ml                       /home/Andela/anaconda3/envs/ml
+
+``` 
+
 
 - #### Activate ml Environment 
 
