@@ -56,7 +56,7 @@ The hand gesture recognition works when a motion sensor perceives and interprets
 <ul>
   <li> Firstly, the camera feeds the image data into a sensing device that is connected to the system. </li> 
   <li> Secondly, the system identifies meaningful gestures from an established gesture library where each gesture is matched to a system command by the user. </li> 
-  <li> Thirdly, the system connects each registered hand gesture, interprets the gesture and uses the library to identify meaningful gestures that match the library. Finally, once the gesture has been interpreted, the system executes the command or function correlated to the specific gesture. <li>
+  <li> Thirdly, the system connects each registered hand gesture, interprets the gesture and uses the library to identify meaningful gestures that match the library. Finally, once the gesture has been interpreted, the system executes the command or function correlated to the specific gesture. </li>
 
 </ul> 
 </p> 
