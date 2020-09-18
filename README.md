@@ -128,9 +128,12 @@ Thus, if the subject face has been registered on the system like that of the own
 
 - #### Create The ML Environment 
 
-| Command | Description  | 
-|------------- | ------------- | 
-| <b> $ conda env create --file ProjectEnvironment.yaml </b> | This would create a new <b>Anaconda</b> environment with the name called <b>ml</b>. |
+
+```console
+
+Andela@team-358:~$ conda env create --file ProjectEnvironment.yaml
+
+```
 
 
 - #### List All Environments  
