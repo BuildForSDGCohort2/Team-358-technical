@@ -147,7 +147,11 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 ```bash
-$ifconfig 
+$ ifconfig down
+
+# conda info --envs 
+
+#conda info 
 
 ```
 
