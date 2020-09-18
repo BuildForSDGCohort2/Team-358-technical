@@ -128,7 +128,6 @@ Thus, if the subject face has been registered on the system like that of the own
 
 - #### Create The ML Environment 
 
-
 ```console
 
 Andela@team-358:~$ conda env create --file ProjectEnvironment.yaml
@@ -138,37 +137,22 @@ Andela@team-358:~$ conda env create --file ProjectEnvironment.yaml
 
 - #### List All Environments  
 
-| Command | Description  | 
-|------------- | ------------- | 
-| <b> $ conda env list </b> | This would list all the created <b>Anaconda</b> environments. |
-
-<b> OR </b> 
-
-| Command | Description  | 
-|------------- | ------------- | 
-| <b> $ conda info --envs </b> | This would list all the <b>Anaconda</b> environments. |
-
-
-
 ```console
-$ ifconfig down
 
-foo@bar:~$ conda info --envs 
-Andela@team-358:~$ conda info --envs
+Andela@team-358:~$ conda env list
 
-#conda info 
+Andela@team-358:~$ conda info --envs 
 
 ```
 
 
-
-
 - #### Activate ml Environment 
 
-| Command | Description  | 
-|------------- | ------------- | 
-| <b> $ conda activate ml </b> | This command would activate <b>ml</b> environment |
+```console
 
+Andela@team-358:~$ conda activate ml 
+
+```
 
 
 ## Using Virtual Environment 
