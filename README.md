@@ -122,7 +122,7 @@ Thus, if the subject face has been registered on the system like that of the own
 
 ## Using Anaconda 
 
-<p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After install, follow the instructions below for setting up your environment for this project. </p> <br>
+<p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After install, follow the instructions below for setting up your environment for this project. </p> 
 
 <p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed for building your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
 
