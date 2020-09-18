@@ -126,13 +126,13 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 <p> <b> First Step:</b> Activate ml environment </p>
-<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed and necessary for build your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
+<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed and necessary for building your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
 
 #### Create The ML Environment 
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>$</b> conda env create --file ProjectEnvironment.yaml | This would create a new Anaconda environment with the name called <b>ml</b>. |
+| <b> $ conda env create --file ProjectEnvironment.yaml </b> | This would create a new Anaconda environment with the name called <b>ml</b>. |
 
 <br> 
 
@@ -140,13 +140,13 @@ Thus, if the subject face has been registered on the system like that of the own
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>$ conda env list </b>| This would list all the created Anaconda environments. |
+| <b> $ conda env list </b> | This would list all the created Anaconda environments. |
 
 <b> OR </b> 
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>$</b> conda info --envs | This would list all the Anaconda environments. |
+| <b> $ conda info --envs </b> | This would list all the Anaconda environments. |
 
 <br> 
 
@@ -154,7 +154,7 @@ Thus, if the subject face has been registered on the system like that of the own
 
 | Command | Description  | 
 |------------- | ------------- | 
-| <b>$</b> conda activate ml | This command would activate <b>ml</b> environment |
+| <b> $ conda activate ml </b> | This command would activate <b>ml</b> environment |
 
 
 
