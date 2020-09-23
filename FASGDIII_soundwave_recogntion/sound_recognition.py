@@ -13,12 +13,10 @@ import os
 import librosa
 import numpy as np
 import soundfile as sf
-from keras.utils import np_utils
-from tensorflow.keras.optimizers import Adam
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.layers import Dense, Activation, Dropout, Convolution2D, Conv2D, MaxPooling2D, GlobalAveragePooling2D
+from tensorflow.keras.layers import Dense, Dropout
 
 
 # Creating a class for sound wave detection prediction
@@ -95,5 +93,5 @@ class SoundPrediction:
         predictions = np.argmax(loaded_model.predict(sound_data))
         predictions = lb.classes_[predictions]
 
-        # TESTING
-        print(predictions) 
+        # Return the predictions
+        return predictions

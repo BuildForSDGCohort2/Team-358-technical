@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+
+<div class="predicted-face">
+
+  <img src="{{ url_for('static', filename='images/pred_image.jpg')}}" >
+
+
+</div>
+
+
+
+<p> The predicted name is: {{pred_value}} </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

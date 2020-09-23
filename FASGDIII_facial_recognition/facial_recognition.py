@@ -35,6 +35,9 @@ class FacialPrediction:
         # Grabbing the input image
         self.frame = input_image
 
+        #
+        self.startX = None; self.startY = None; self.endX = None; self.endY = None;
+
         # Loading the serialized face detector model into memory
         proto_path = os.path.join(detector_model, "deploy.prototxt")
         model_path = os.path.join(detector_model, "res10.caffemodel")
@@ -81,10 +84,10 @@ class FacialPrediction:
             if confidence >= confidence_value:
                 box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
                 # Converting the values for box as integer values
-                (startX, startY, endX, endY) = box.astype('int')
+                (self.startX, self.startY, self.endX, self.endY) = box.astype('int')
 
                 # Extracting the face ROI
-                face = self.frame[startY:endY, startX:endX]
+                face = self.frame[self.startY:self.endY, self.startX:self.endX]
                 (fH, fW) = face.shape[:2]
 
                 # Ensure the face width and height are sufficiently large
@@ -110,12 +113,12 @@ class FacialPrediction:
 
                 # Draw the bounding box of the face alond with the associated probability
                 pred_name = "{}: {:.3f}".format(name, proba_val)
-                y = startY - 10 if startY - 10 > 10 else startX + 10
+                y = self.startY - 10 if self.startY - 10 > 10 else self.startX + 10
                 # Drawing the rectangle around the face
-                cv2.rectangle(self.frame, (startX, startY), (endX, endY), (0, 255, 0), 2)
+                cv2.rectangle(self.frame, (self.startX, self.startY), (self.endX, self.endY), (0, 255, 0), 2)
 
                 # Placing the predicted text
                 # cv2.putText(self.frame, pred_name, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
 
         # Returning the frame
-        return self.frame, pred_name
+        return self.frame, pred_name, self.startX, self.startY, self.endX, self.endY

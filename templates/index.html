@@ -16,8 +16,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> SECURITY INFO </title>
 
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
         <!-- Adding the stylesheet-->
-        <link rel="stylesheet" href="../static/css/main.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <!-- Adding Google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     </head>
@@ -30,37 +38,56 @@
             <h1 id="first-heading"> SECURITY INFO </h1>
         </section>
 
+
+        {% block content %}
         <!--Creating the second section -->
         <section class="second-section">
-            <p> The Live video feed below captures frame from the camera, perfoms a <b>Facial Recognition</b>, <b>Gesture Recognition</b> and takes in the users <b> Input Voice </b> for
-            verification. If the input data is matched with the data on its data base, it <b> Authenticates </b> the user, and if <b>NOT</b> it sounds an alarm and sends the <b>Frames</b>
-            of the <b>Unidentified</b> person to the <b>Original</b> User. </p>
-            
+            <p> The Live video feed below captures frame from the camera, perfoms a <b>Facial Recognition</b>, <b>Gesture Recognition</b> and <b> Voice Recognition </b> for
+            verification. <br> </p>
+
             <h1 class="timer-class"><span id="timerMins">00</span>:<span id="timerSeconds">00</span>:<span id="timerTens">00</span></h1>
 
         </section>
 
-        <section class="voice-container">
-          <img id="video-frames" src="{{ url_for('gestureFeed') }}"  alt="Camera1">  <br>
+        <div class="video-div">
+            <img id="video-frames" src="{{ url_for('gestureFeed') }}"  alt="Camera1">  <br> <br>
 
+        </div>
 
-        <div class="container" id="container">
+        <!-- <div class="video-div">
+          <section class="voice-container">
+          <div class="container" id="container">
+              <div class="circle"></div>
 
-            <div class="circle"></div>
+              <p id="text"></p>
 
-            <p id="text"></p>
+              <div class="pointer-container">
+                <span class="pointer"></span>
+              </div>
 
-            <div class="pointer-container">
-              <span class="pointer"></span>
+              <div class="gradient-circle"></div>
+
             </div>
 
-            <div class="gradient-circle"></div>
 
-          </div>
+          </section>
+        </div> -->
+
+          <br>
 
 
-        </section>
+          <div class="facial-recognition-section">
+          <form action="{{url_for('record_frames')}}">
+              <button class="facial-recognition-btn" type="submit"> Save Recording </button>
+
+          </form>
+
+        </div>
+
         <br> <br> <br>
+
+
+        {%  endblock %}
 
 
         <!--Adding javascript-->
