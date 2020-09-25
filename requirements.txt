@@ -1,0 +1,13 @@
+flask
+imutils
+tensorflow
+keras
+opencv-python
+sklearn==0.22.1
+joblib
+pickle
+librosa
+PySoundFile
+nltk
+SpeechRecognition
+gTTS==1.1.8
