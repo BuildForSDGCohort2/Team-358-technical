@@ -77,6 +77,9 @@ The hand gesture recognition works when a motion sensor perceives and interprets
 
 
 <h3> Working Principle </h3> 
+<div>
+   <img src="ANDELADOCS/FASGD-III Diagram-Page-1.jpg" width="900px" height="600px"> 
+</div>
 
 <p style="margin-left: 10px;"> In the security system, the facial recognition model is the first application to perform its functions, because the cameras exposed are always accepting frames from the outside world. 
 
