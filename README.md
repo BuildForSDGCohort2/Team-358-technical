@@ -165,10 +165,38 @@ Andela@team-358:~$ conda activate ml
 
 ```
 
+#### Install From The Requirement.txt File 
+
+```console
+
+(ml)Andela@team-358:~$ pip install -r requirement.txt 
+
+``` 
 
 
+## Running The Application
 
-## Running The Application 
+<p> After setting up your environment and installing the necessary modules and dependencies. Open a terminal 
+window inside the root directory and execute the <b>"app.py"</b> file using this command  </p> 
+
+```console 
+
+(ml)Andela@team-358:~$ python app.py  
+
+``` 
+
+<p> Once executed, you should see the following message displayed below if working properly. </p> 
+
+```console 
+
+* Serving Flask app "app" (lazy loading)
+ * Environment: production
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+
+``` 
+
 
 
 ## Deployment 
