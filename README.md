@@ -7,7 +7,7 @@
 
 
 
-## Description 
+## DESCRIPTION
 
 <p>  Facial/Acoustic Sound Wave And Gesture Detection <b>FASGD-III</b> is a security application that performs the following which are: 
 
@@ -93,7 +93,7 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 
-## Prerequisites 
+## PREREQUISITES
 
 <p> The following packages and modules are needed for the application to work on your system:
   <ul>
@@ -121,15 +121,15 @@ Thus, if the subject face has been registered on the system like that of the own
 
 
 
-# Installation 
+# INSTALLATION
 
-## Using Anaconda 
+### USING ANACONDA 
 
 <p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After install, follow the instructions below for setting up your environment for this project. </p> 
 
 <p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed for building your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
 
-- #### Create The ML Environment 
+- #### CREATE ML ENVIRONMENT 
 
 ```console
 
@@ -138,7 +138,7 @@ Andela@team-358:~$ conda env create --file ProjectEnvironment.yaml
 ```
 
 
-- #### List All Environments  
+- #### LIST ALL CONDA ENVIRONMENTS 
 
 ```console
 
@@ -148,7 +148,7 @@ Andela@team-358:~$ conda info --envs
 
 ```
 
-- #### Output of the listed anaconda environments 
+- #### OUTPUT 
 
 ```console 
 base                  *  /home/Andela/anaconda3
@@ -157,7 +157,7 @@ ml                       /home/Andela/anaconda3/envs/ml
 ``` 
 
 
-- #### Activate ml Environment 
+- #### ACTIVATE "(ml)" ENVIRONMENT 
 
 ```console
 
@@ -165,7 +165,7 @@ Andela@team-358:~$ conda activate ml
 
 ```
 
-#### Install From The Requirement.txt File 
+#### INSTALLING FROM REQUIREMENTS.TXT FILE 
 
 ```console
 
@@ -174,7 +174,7 @@ Andela@team-358:~$ conda activate ml
 ``` 
 
 
-## Running The Application
+## RUNNING THE APPLICATION
 
 <p> After setting up your environment and installing the necessary modules and dependencies. Open a terminal 
 window inside the root directory and execute the <b>"app.py"</b> file using this command  </p> 
@@ -198,17 +198,23 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 ``` 
 
 
-
-## Deployment 
-
-
-## Contributing 
+## CONTRIBUTING 
 
 
-## Authors 
+## AUTHORS
 
 
+## ACKNOWLEDGMENTS 
 
-## Acknowledgments 
+<ul>
+<li> ANDELA TEAM </li> 
+<li> Codecademy </li> 
+<li> Google Build For SDG </li> 
+</ul> 
+
+## REFERENCES
+
+- link: www.google.com 
+
 
 
