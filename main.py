@@ -23,6 +23,13 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.models import Sequential
+import email
+import smtplib
+import ssl
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from collections import Counter
 import cv2
 import speech_recognition as sr
@@ -55,6 +62,54 @@ def make_face_prediction(input_image):
     cv2.putText(single_frame, pred_value, (9, 51), cv2.FONT_HERSHEY_SIMPLEX, 0.72, (0, 255, 0), 2)
     # Saving the image to disk
     cv2.imwrite("Predicted.jpg", single_frame)
+
+
+# Creating a function for sending video mails
+def send_email(VIDEO_FILE):
+    # Setting the subject email body
+    SUBJECT = "SOMEONE DETECTED !!!"
+    BODY = "Someone was detected, and the frames are below. Click to watch."
+    SENDER_EMAIL = "noreplayalansmith@gmail.com"
+    RECEIVER_EMAIL = "cboy.chinedu@gmail.com"
+    PASSWORD = ""
+
+    # Create a multipart message and set the headers
+    message = MIMEMultipart()
+    message["From"] = SENDER_EMAIL
+    message["To"] = RECEIVER_EMAIL
+    message["Subject"] = SUBJECT
+    message["Bcc"] = RECEIVER_EMAIL
+
+    # Adding the body of the email to the mime-multipart class
+    message.attach(MIMEText(BODY, "plain"))
+
+    # Adding the video file attachment
+    filename = VIDEO_FILE
+
+    # Loading teh file into memory as a read byte file
+    with open(filename, "rb") as file:
+        # Add the file as an application/octet-stream
+        part = MIMEBase("application", "octet-stream")
+        part.set_payload(file.read())
+
+    # Encode file in ASCII characters to send by email
+    encoders.encode_base64(part)
+
+    # Add header as key/value pair to attachment part
+    part.add_header(
+        "Content-Disposition",
+        f"attachment; filename = {filename}",
+    )
+
+    # Add attachment to message and convert message to string
+    message.attach(part)
+    text = message.as_string()
+
+    # Logging into the server using secure context and send the email
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        server.login(SENDER_EMAIL, PASSWORD)
+        server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, text)
 
 
 # Creating a class for the main function
@@ -111,6 +166,9 @@ class MainFunction:
         out.release()
         cv2.destroyAllWindows()
 
+        # Returning the name of the saved video file
+        return filename
+
     # Creating the function for performing the facial recognition.
     def Recognition(self):
         predicted_names = list()
@@ -160,7 +218,7 @@ class MainFunction:
             predicted_names.append(result_names)
 
             # FIND THE MOST PREDICTED NAME IN THE LIST
-            if saving_count == 100:
+            if saving_count == 50:
                 # Find the most occurred predicted names in the predicted_names list
                 most_occured = Counter(predicted_names).most_common()
                 # Extracting the values
@@ -172,12 +230,15 @@ class MainFunction:
                     print("Unknown person detected.")
 
                     # Record the frames for 50 counts
-                    self.record_frame(saving_count)
-                    saving_count = 10
+                    VIDEO_FILE = self.record_frame(saving_count)
+                    print(VIDEO_FILE)
+                    send_email(VIDEO_FILE)
+                    saving_count = 0
 
                     # SEND THE RECORDED SAVED FRAMES TO THE MOBILE APPLICATION OR ONLINE SERVER
                     # USING A POST REQUEST OR SOCKET.
-
+                else:
+                    saving_count = 0
 
             else:
                 pass

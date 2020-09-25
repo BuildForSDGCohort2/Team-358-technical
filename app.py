@@ -12,7 +12,6 @@
 # Importing the necessary modules
 import cv2
 from main import MainFunction
-from FASGDIII_facial_recognition.facial_recognition import FacialPrediction
 from flask import Flask, render_template, jsonify, Response, redirect, url_for
 
 # Creating the flask application
