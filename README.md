@@ -72,7 +72,19 @@ The hand gesture recognition works when a motion sensor perceives and interprets
 
 <h3> Sound Recognition </h3>
 
-<p>  Sound recognition is ..... </p>
+<p>  <b>Sound recognition</b> is a technology, which is based on both traditional pattern recognition theories and audio signal analysis methods. Sound recognition technologies contain preliminary data process, <b> feature extraction </b> and classification algorithms. Sound recognition can classify feature vectors. Feature vectors are created as a result of preliminary data processing and <b> linear predictive coding. </b> <br>
+Sound recognition technologies are used for:
+
+<ul> 
+<li> Music recognition </li> 
+<li> Speech recognition </li> 
+<li> Automatic alarm detection and identification for surveillance, monitoring systems, based on the acoustic environment. </li> 
+<li> Assistance to disabled or elderly people affected in their hearing capabilities. </li> 
+<li> Identifying species of animals such as fish and mammals, e.g in acoustical oceanography </li> 
+
+</ul> 
+
+</p>
 
 
 
@@ -215,6 +227,8 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 ## REFERENCES
 
 - link: www.google.com 
+
+- link: https://en.wikipedia.org/wiki/Sound_recognition#:~:text=Sound%20recognition%20is%20a%20technology,feature%20extraction%20and%20classification%20algorithms. 
 
 
 
