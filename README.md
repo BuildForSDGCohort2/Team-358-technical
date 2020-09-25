@@ -166,10 +166,6 @@ Andela@team-358:~$ conda activate ml
 ```
 
 
-## Using Virtual Environment 
-
-<p> Using the virtual environment .......  </p>
-
 
 
 ## Running The Application 
