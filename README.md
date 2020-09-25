@@ -226,9 +226,9 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
 ## REFERENCES
 
-- link: www.google.com 
+- www.google.com 
 
-- link: https://en.wikipedia.org/wiki/Sound_recognition#:~:text=Sound%20recognition%20is%20a%20technology,feature%20extraction%20and%20classification%20algorithms. 
+- https://en.wikipedia.org/wiki/Sound_recognition#:~:text=Sound%20recognition%20is%20a%20technology,feature%20extraction%20and%20classification%20algorithms. 
 
 
 
