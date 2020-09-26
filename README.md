@@ -49,7 +49,7 @@ In the hand gesture recognition, a single camera is used to explore the vision-b
  <ul>
   <li> <b>Gesture A: </b>  Disable Alarm </li> 
   <li> <b> Gesture B:</b>  Unlock the security system </li>
-  <li> <b> Gesture C: </b> Call the police or Dial 911 </li>  
+  <li> <b> Gesture C: </b> Call the police or Dial 911 </li> 
  </ul>
 
 Thus, this functions would be executed when a physical implementation is performed. 
@@ -69,7 +69,7 @@ The hand gesture recognition works when a motion sensor perceives and interprets
     <img src="static/images/null.jpg" width="800px" height="400px">
 </div> <br>
 
-<p> This occurs when the frames are not reading and the camera is closed. </p>
+<p> This occurs when the the cameras are closed, therefore the input returns a <b>None</b> type value. </p>
 
 
 
@@ -161,9 +161,10 @@ Thus, if the subject face has been registered on the system like that of the own
 
 ### USING ANACONDA 
 
-<p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After install, follow the instructions below for setting up your environment for this project. </p> 
+<p> Download <b>Anaconda </b> Package manager and install it on your operating system distribution. After installation, follow the instructions below by typing the commands in your command prompt inorder to set up your conda environment. </p> 
 
-<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed for building your environment. So open a command prompt or terminal in your working directory and type the following commands. </p> 
+<p> In your project directory, you would see a file called <b>ProjectEnvironment.yaml</b> file. The file contains all the modules and packages needed for building your environment. <br> 
+Open a command prompt or terminal in the working directory for this project and type the following commands. </p> 
 
 - #### CREATE ML ENVIRONMENT 
 
