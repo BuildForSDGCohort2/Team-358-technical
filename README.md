@@ -91,7 +91,7 @@ Sound recognition technologies are used for:
 </p> <br> 
 
 
-<h4> SECURITY </H4> 
+<h4> SECURITY </h4> 
 <hr>
 <p> 
 In monitoring and security, an important contribution to alarm detection and alarm verification can be supplied, using sound recognition techniques. In particular, 
