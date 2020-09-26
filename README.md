@@ -245,7 +245,7 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
    Mbonu Chinedum
    <div>
-     <img src="ANDELADOCS/img1.jpg" width="90px" height="100px" style=" float: left; margin-right: 10px;"> 
+     <img src="ANDELADOCS/img1.jpg" width="90px" height="100px" style=" float: left; margin-right: 10px;">  Mbonu Chinedum
    </div>
    Mbonu Chinedum
    
