@@ -240,16 +240,16 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
 ## AUTHORS
 <hr> 
-<p style="margin-left: 100px;> 
+<p style="margin-left: 100px;"> 
    Mbonu Chinedum
 </p> 
+
 <p> 
    <div>
      <img src="ANDELADOCS/img1.jpg" width="90px" height="100px" style="margin-right: 10px;"> 
    </div>
    
-   
-   
+
 </p> 
 
 
