@@ -23,6 +23,7 @@
 </p>
 
 <h3> Facial Recognition </h3>
+<hr> 
 
 <div>
     <img src="static/images/pred1.jpg" width="800px" height="400px">
@@ -35,6 +36,7 @@ Once the machine learning classifier learns this mapping function, a serialized 
 
 
 <h3> Hand Gesture Recognition </h3> 
+<hr> 
 
 <div>
     <img src="static/images/pred2.jpg" width="800px" height="400px">
@@ -61,7 +63,8 @@ The hand gesture recognition works when a motion sensor perceives and interprets
 </ul> 
 </p> 
 
-<h4> Null Readings </h4>
+<h3> Null Readings </h3>
+<hr> 
 <div>
     <img src="static/images/null.jpg" width="800px" height="400px">
 </div> <br>
@@ -71,6 +74,7 @@ The hand gesture recognition works when a motion sensor perceives and interprets
 
 
 <h3> Sound Recognition </h3>
+<hr>
 
 <p>  <b>Sound recognition</b> is a technology, which is based on both traditional pattern recognition theories and audio signal analysis methods. Sound recognition technologies contain preliminary data process, <b> feature extraction </b> and classification algorithms. Sound recognition can classify feature vectors. Feature vectors are created as a result of preliminary data processing and <b> linear predictive coding. </b> <br>
 Sound recognition technologies are used for:
@@ -84,7 +88,25 @@ Sound recognition technologies are used for:
 
 </ul> 
 
-</p>
+</p> <br> 
+
+
+<h4> SECURITY </H4> 
+<hr>
+<p> 
+In monitoring and security, an important contribution to alarm detection and alarm verification can be supplied, using sound recognition techniques. In particular, 
+these methods could be helpful for intrusion detection in places like offices, stores, private homes or for the supervision of public premises exposed to person 
+aggression. 
+
+</p> <br> 
+
+<h4> Assistance </h4> 
+<hr> 
+<p> Solutions based on a sound recognition technology can offer assistance to disabled and elderly people affected in hearing capabilities, helping them to keep or 
+recover some independence in their daily occupations. 
+
+
+</p> 
 
 
 
