@@ -13,7 +13,9 @@
 import os
 import cv2
 import ssl
+import json
 import smtplib
+import requests
 import cloudinary
 import cloudinary.uploader
 from email import encoders
@@ -63,28 +65,28 @@ def send_email(VIDEO_FILE):
     # Setting the subject email body
     SUBJECT = "[ALERT] SOMEONE DETECTED !!!"
     BODY = """\
-        <html> 
-            <head> 
-            <link href="https://fonts.googleapis.com/css2?family=David+Libre&display=swap" rel="stylesheet"> 
-            
+        <html>
+            <head>
+            <link href="https://fonts.googleapis.com/css2?family=David+Libre&display=swap" rel="stylesheet">
+
             <style>
-                body{display: flex; align-content: center; justify-content: center; background-color: white;} 
-                p{margin-left: 16px;  font-size: 12px; color: black; font-family: 'David Libre', serif;} 
-                h2{margin-left: 10px; color: red; font-family: 'David Libre', serif; text-align: center; font-size: 40px;} 
-            </style> 
-            </head> 
-            
-            <body> 
-                <center> <h2> ALERT !!! </h2> </center> <br> 
-                
-                <p> <b> Hello </b>, <br> 
+                body{display: flex; align-content: center; justify-content: center; background-color: white;}
+                p{margin-left: 16px;  font-size: 12px; color: black; font-family: 'David Libre', serif;}
+                h2{margin-left: 10px; color: red; font-family: 'David Libre', serif; text-align: center; font-size: 40px;}
+            </style>
+            </head>
+
+            <body>
+                <center> <h2> ALERT !!! </h2> </center> <br>
+
+                <p> <b> Hello </b>, <br>
                 Someone was detected by camera two. <br>
-                The recorded frames are below. <br> 
-                Click to watch.  </p>  <br> 
-            </body> 
-        </html> 
-    
-    
+                The recorded frames are below. <br>
+                Click to watch.  </p>  <br>
+            </body>
+        </html>
+
+
     """
     SENDER_EMAIL = "fasgd.alert@gmail.com"
     RECEIVER_EMAIL = "cboy.chinedu@gmail.com"
@@ -260,8 +262,17 @@ class MainFunction:
                     try:
                         # SEND THE RECORDED SAVED FRAMES TO THE MOBILE APPLICATION OR ONLINE SERVER
                         # USING A POST REQUEST OR SOCKET.
-                        response = cloudinary.uploader.upload(VIDEO_FILE, resource_type="video")
-                        print(response["secure_url"])
+                        video_response = cloudinary.uploader.upload(VIDEO_FILE, resource_type="video")
+
+                        # Saving the url to mongo db but setting the URL path to the mongo database database
+                        URL = "https://team358.herokuapp.com/user/upload"
+                        data = {"url": video_response["secure_url"]}
+
+                        # Getting the response if the video was sent
+                        database_response = requests.post(URL, data=data)
+
+                        # Converting the response back into a json readable format
+                        database_response = json.loads(database_response.text)
 
                     except:
                         pass
