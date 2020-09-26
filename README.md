@@ -100,7 +100,7 @@ aggression.
 
 </p> <br> 
 
-<h4> Assistance </h4> 
+<h4> ASSISTANCE </h4> 
 <hr> 
 <p> Solutions based on a sound recognition technology can offer assistance to disabled and elderly people affected in hearing capabilities, helping them to keep or 
 recover some independence in their daily occupations. 
