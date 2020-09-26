@@ -10,5 +10,8 @@ FASGDIII_gesture_recognition/__pycache__/
 FASGDIII_soundwave_recogntion/__pycache__/ 
 FASGDIII_soundwave_recogntion/dataset/ 
 FASGDIII_soundwave_recogntion/.ipynb_checkpoints/ 
-FASGDIII_soundwave_recogntion/.virtual_documents/ 
+FASGDIII_soundwave_recogntion/.virtual_documents/
+key/cloudinary.yml
+key/key_gen.pem
+key/__pycache__
 

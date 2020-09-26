@@ -10,12 +10,12 @@
 
 
 # Importing the necessary modules
-import cv2
 from main import MainFunction
-from flask import Flask, render_template, jsonify, Response, redirect, url_for
+from flask import Flask, render_template, Response, redirect, url_for
 
 # Creating the flask application
 app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z##!!-+=/'
 
 # Creating an instance of the predicted live feed
 live_feed = MainFunction()
@@ -30,7 +30,6 @@ def index():
 # Create a route for recording the frames
 @app.route('/record_frames')
 def record_frames():
-    print("[INFO]: Saving recording")
     live_feed.record_frame()
     return redirect(url_for('second_camera'))
 
