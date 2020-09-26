@@ -239,6 +239,15 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
 
 ## AUTHORS
+<hr> 
+<p> 
+   <div>
+     <img src="ANDELADOCS/img1.jpg" width="90px" height="100px" style="margin-right: 10px;"> 
+   </div>
+   Mbonu Chinedum
+   
+   
+</p> 
 
 
 ## ACKNOWLEDGMENTS 
