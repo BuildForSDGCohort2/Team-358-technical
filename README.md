@@ -93,6 +93,7 @@ Sound recognition technologies are used for:
    <img src="ANDELADOCS/FASGD-III Diagram-Page-1.jpg" width="900px" height="500px"> 
 </div>
 
+<br>
 <p style="margin-left: 10px;"> In the security system, the facial recognition model is the first application to perform its functions, because the cameras exposed are always accepting frames from the outside world. 
 
 The cameras which are positioned at specific areas, scans the face seen in view to make predictions on if the identified persons matches the trained facec stored in its database.
