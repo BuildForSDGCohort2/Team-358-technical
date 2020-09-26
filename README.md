@@ -240,7 +240,7 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
 ## AUTHORS
 <hr> 
-<p style="margin-left: 100px;"> 
+<p style="margin-left: 500px; "> 
    Mbonu Chinedum
 </p> 
 
