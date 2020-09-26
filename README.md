@@ -90,7 +90,7 @@ Sound recognition technologies are used for:
 
 <h3> Working Principle </h3> 
 <div>
-   <img src="ANDELADOCS/FASGD-III Diagram-Page-1.jpg" width="900px" height="600px"> 
+   <img src="ANDELADOCS/FASGD-III Diagram-Page-1.jpg" width="900px" height="500px"> 
 </div>
 
 <p style="margin-left: 10px;"> In the security system, the facial recognition model is the first application to perform its functions, because the cameras exposed are always accepting frames from the outside world. 
