@@ -240,14 +240,14 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
 ## AUTHORS
 <hr> 
-<p style="text-align: center;"> 
-   Mbonu Chinedum
-</p> 
 
 <p> 
+
+   Mbonu Chinedum
    <div>
-     <img src="ANDELADOCS/img1.jpg" width="90px" height="100px" style="margin-right: 10px;"> 
+     <img src="ANDELADOCS/img1.jpg" width="90px" height="100px" style=" float: left; margin-right: 10px;"> 
    </div>
+   Mbonu Chinedum
    
 
 </p> 
