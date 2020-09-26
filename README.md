@@ -106,11 +106,13 @@ aggression.
 recover some independence in their daily occupations. 
 
 
-</p> 
+</p> <br> 
 
 
 
-<h3> Working Principle </h3> 
+## WORKING PRINCIPLE 
+
+<hr> 
 <div>
    <img src="ANDELADOCS/FASGD-III Diagram-Page-1.jpg" width="900px" height="500px"> 
 </div>
