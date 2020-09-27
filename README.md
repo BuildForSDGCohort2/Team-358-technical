@@ -235,10 +235,8 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 ``` 
 
 
-## CONTRIBUTING 
+## AUTHORS/CONTRIBUTING 
 
-
-## AUTHORS
 <hr> 
 
 <p> 
