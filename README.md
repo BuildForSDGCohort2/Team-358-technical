@@ -237,7 +237,6 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 
 ## AUTHORS/CONTRIBUTING 
 
-<hr> 
 
 <p> 
 
