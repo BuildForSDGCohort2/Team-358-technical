@@ -244,11 +244,15 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 <p> 
 
    <div>
-     <img src="ANDELADOCS/img1.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  <h3> Mbonu Chinedum </h3> 
+     <img src="ANDELADOCS/img1.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  <h3> Mbonu Chinedum (Software Engineer)</h3> 
    </div>
    
    <div>
-     <img src="ANDELADOCS/img1.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  <h3> Mbonu Chinedum </h3> 
+     <img src="ANDELADOCS/img2.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  <h3> Adetunji Oluwaferanmi (Team-Lead)</h3> 
+   </div>
+   
+   <div>
+     <img src="ANDELADOCS/img3.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  <h3> Ugochukuwu Umeoke </h3> 
    </div>
   
    
