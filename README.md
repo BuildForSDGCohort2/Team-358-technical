@@ -35,6 +35,7 @@ This dataset which comprises of various images is trained on a deep learning or 
 Once the machine learning classifier learns this mapping function, a serialized model weight file is generated and saved which is used to make live predictions on the individual faces. <br> 
 
 Facial recognition system is a complex image-processing problem in real world applications with complex effects of illumination, occlusion and recognition techniques in image analysis. A <b>detection</b> application is used to find position of the faces in a given image, while a <b>recognition</b> algorithm is used to classify given images with known structured properties. This properties are used commonly in most of computer vision applications. Also, <b>recognition </b> application use standard images and detection algorithms to detect faces and extract facial features which include the <b>eyes, eyebrows, nose,</b> and <b>mouth.</b> This features make the algorithm more complicated than a single detection or recognition algorithm. <br> 
+
 The first step for a face recognition algorithm is to get an image frame from a camera, perform a face detection and then a recognition process on the grabbed frame. 
 The input image which is in form of <b>digital data</b> is sent to the face detection classifier or algorithm which is responsible for extracting <b>facial features</b> in the image. Once this is achieved, the next step would be in recognition of the face from the extracted facial embeddings. 
 <br> 
@@ -308,10 +309,10 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 ## AUTHORS/CONTRIBUTING
 
 
-| Image | Fullname |
-| ------ | ------ |
+| Image  | Fullname                                            |
+| ------ | --------------------------------------------------- |
 | <img src="ANDELADOCS/img1.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  | Mbonu Chinedum (Software Engineer) |
-| <img src="ANDELADOCS/img2.jpeg" width="90px" height="80px" style=" float: left; margin-right: 70px;"> | Adetunji Oluwaferanmi (Team-lead) |
+| <img src="ANDELADOCS/img2.jpeg" width="90px" height="80px" style=" float: left; margin-right: 70px;"> | Adetunji Oluwaferanmi |
 | <img src="ANDELADOCS/img3.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  | Ugochukuwu Umeoke  |
 | <img src="ANDELADOCS/img4.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  | Abiola Fagbemi |
 
