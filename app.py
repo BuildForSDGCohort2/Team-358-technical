@@ -10,7 +10,10 @@
 
 
 # Importing the necessary modules
+import time
+import threading
 from main import MainFunction
+from FASGDIII_soundwave_recogntion.interact import Interaction
 from flask import Flask, render_template, Response, redirect, url_for
 
 # Creating the flask application
@@ -19,6 +22,9 @@ app.secret_key = b'_5#y2L"F4Q8z##!!-+=/'
 
 # Creating an instance of the predicted live feed
 live_feed = MainFunction()
+
+# Creating an instance of the sound recognition class
+soundRec = Interaction()
 
 
 # Creating the first Route
@@ -49,10 +55,26 @@ def second_camera():
     return Response(live_feed.SecondCamera(),
                     mimetype="multipart/x-mixed-replace; boundary=frame")
 
+# Creating the first function
+def first_function():
+    cnt = 0
+    while True:
+        print(f"First thread count: {cnt}")
+        time.sleep(4)
+        print(f"Second thread count: {cnt}")
+        time.sleep(4)
+        cnt += 1
+
+
+# Creating threads
+server = threading.Thread(target=app.run)
+assistant = threading.Thread(target=soundRec.MainInteraction)
 
 # Running the application
 if __name__ == "__main__":
-    app.run(debug=True)
+    server.start()
+    assistant.start()
+    # app.run(debug=True)
 
 
 

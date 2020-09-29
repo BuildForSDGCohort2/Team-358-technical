@@ -12,10 +12,7 @@
 import os
 import librosa
 import numpy as np
-import soundfile as sf
-from sklearn.preprocessing import LabelEncoder, StandardScaler
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.layers import Dense, Dropout
 
 
