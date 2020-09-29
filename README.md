@@ -31,8 +31,16 @@
 
 <p style="margin-left: 10px;"> A facial recognition device is a device that takes an image or a video of a human face and compares it to other images in a database.
 When building a facial recognition system, several pictures of the subject must have been taken at different angles and stored in a folder called the images dataset.
-The dataset whose comprises of various images is trained on a deep learning or machine learning classifier to learn a mapping function on the relationships between the face.
-Once the machine learning classifier learns this mapping function, a serialized model weight file is generated and saved, which is then used to make live predictions on the individual faces.</p>
+This dataset which comprises of various images is trained on a deep learning or machine learning classifier to learn a mapping function on relationships between the face.
+Once the machine learning classifier learns this mapping function, a serialized model weight file is generated and saved which is used to make live predictions on the individual faces. <br> 
+
+Facial recognition system is a complex image-processing problem in real world applications with complex effects of illumination, occlusion and recognition techniques in image analysis. A <b>detection</b> application is used to find position of the faces in a given image, while a <b>recognition</b> algorithm is used to classify given images with known structured properties. This properties are used commonly in most of computer vision applications. Also, <b>recognition </b> application use standard images and detection algorithms to detect faces and extract facial features which include the <b>eyes, eyebrows, nose,</b> and <b>mouth.</b> This features make the algorithm more complicated than a single detection or recognition algorithm. <br> 
+The first step for a face recognition algorithm is to get an image frame from a camera, perform a face detection and then a recognition process on the grabbed frame. 
+The input image which is in form of <b>digital data</b> is sent to the face detection classifier or algorithm which is responsible for extracting <b>facial features</b> in the image. Once this is achieved, the next step would be in recognition of the face from the extracted facial embeddings. 
+<br> 
+
+
+</p>
 
 
 <h3> Hand Gesture Recognition </h3>
