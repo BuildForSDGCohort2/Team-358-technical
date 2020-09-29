@@ -201,29 +201,34 @@ Open a command prompt or terminal in the working directory for this project and 
 
 </ul>
 
-
-
 </p>
+
 
 ```console
 
-    Andela@team-358:~$ sudo apt-get remove libportaudio2
-
-    Andela@team-358:~$ sudo apt-get install libasound2-dev
-
-    Andela@team-358:~$ git clone -b alsapatch https://github.com/gglockner/portaudio
-
-    Andela@team-358:~$ cd portaudio
-
-    Andela@team-358:~/portaudio$ ./configure && make
-
-    Andela@team-358:~/portaudio$ sudo make install
-
-    Andela@team-358:~/portaudio$ sudo ldconfig
-    
-    Andela@team-358:~/portaudio$ cd ..
+Andela@team-358:~$ sudo apt-get remove libportaudio2
 
 ```
+
+
+```console
+
+Andela@team-358:~$ sudo apt-get install libasound2-dev
+
+Andela@team-358:~$ git clone -b alsapatch https://github.com/gglockner/portaudio
+
+Andela@team-358:~$ cd portaudio
+
+Andela@team-358:~/portaudio$ ./configure && make
+
+Andela@team-358:~/portaudio$ sudo make install
+
+Andela@team-358:~/portaudio$ sudo ldconfig
+
+Andela@team-358:~/portaudio$ cd ..
+
+```
+
 
 ```console
 
