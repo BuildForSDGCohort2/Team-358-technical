@@ -309,8 +309,8 @@ window inside the root directory and execute the <b>"app.py"</b> file using this
 ## AUTHORS/CONTRIBUTING
 
 
-| Image | Fullname |
-| ------ | ------ |
+| Image  | Fullname                                            |
+| ------ | --------------------------------------------------- |
 | <img src="ANDELADOCS/img1.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  | Mbonu Chinedum (Software Engineer) |
 | <img src="ANDELADOCS/img2.jpeg" width="90px" height="80px" style=" float: left; margin-right: 70px;"> | Adetunji Oluwaferanmi (Team-lead) |
 | <img src="ANDELADOCS/img3.jpg" width="90px" height="80px" style=" float: left; margin-right: 70px;">  | Ugochukuwu Umeoke  |
