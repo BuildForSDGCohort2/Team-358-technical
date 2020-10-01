@@ -59,9 +59,9 @@ def send_email(VIDEO_FILE):
 
 
     """
-    SENDER_EMAIL = "fasgd.alert@gmail.com"
-    RECEIVER_EMAIL = "cboy.chinedu@gmail.com"
-    PASSWORD = decrpyted_keys.Decrypt()[0]
+    SENDER_EMAIL = ""
+    RECEIVER_EMAIL = ""
+    PASSWORD = ""
 
     # Create a multipart message and set the headers
     message = MIMEMultipart()
@@ -100,4 +100,3 @@ def send_email(VIDEO_FILE):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(SENDER_EMAIL, PASSWORD)
         server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, text)
-

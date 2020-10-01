@@ -55,6 +55,7 @@ def second_camera():
     return Response(live_feed.SecondCamera(),
                     mimetype="multipart/x-mixed-replace; boundary=frame")
 
+
 # Creating the first function
 def first_function():
     cnt = 0
@@ -74,7 +75,7 @@ assistant = threading.Thread(target=soundRec.MainInteraction)
 if __name__ == "__main__":
     server.start()
     assistant.start()
-    # app.run(debug=True)
+    app.run()
 
 
 
