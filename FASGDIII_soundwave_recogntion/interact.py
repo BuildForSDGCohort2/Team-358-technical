@@ -5,7 +5,7 @@
 # Importing the necessary packages
 import os
 import re
-from subprocess import call
+import io
 import pickle
 import string
 import numpy as np
@@ -14,6 +14,7 @@ from gtts import gTTS
 from time import sleep
 from pygame import mixer
 import speech_recognition as sr
+from scipy.io.wavfile import read, write
 from tensorflow.keras.models import Sequential
 from .sound_recognition import SoundPrediction
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -95,13 +96,16 @@ class Interaction:
             "name": ["My name is fasgd, and it stands for facial acoustic, sound wave and gesture detection.", "Call me fasgd.",
                      "My name is fasgd. facial-acoustic sound and gesture detection.", "Call me fasgd for short okay."],
 
-            "password": ["On it, authentication required for further processing, hold on.",
-                         "Okay, performing the sound recognition process."],
+            "password": ["Sorry, I can't recognize your voice.", "Unable to recognize your voice"],
 
-            "task": ["""Well, i am a security application that uses ML algorithms to perform facial recognition, 
+            "chinedu": ["Chinedu Voice Confirmed", "Hello Chinedu, your voice is confirmed."],
+
+            "task": ["""Well, i am a security application that uses ML algorithms to perform facial recognition,
                         gesture recognition and sound wave recognition scan.""",
-                     """ I am a security application that utilizes machine learning algorithms for verfication 
-                     and authentication. I am mostly specialized in facial recognition, sound wave and gesture detection."""]
+                     """ I am a security application that utilizes machine learning algorithms for verification
+                     and authentication. I am mostly specialized in facial recognition, sound wave and gesture detection."""],
+
+            "unknown": ["Sorry i do not understand you.", "Please speak again, i did not get that."]
 
         }
 
@@ -129,7 +133,7 @@ class Interaction:
         return message
 
     # Creating a function for chatting
-    def chat(self, message):
+    def chat(self, message, wav_data):
         # Getting the user input message and performing some preprocessing
         # Functions on it by removing unwanted character and cleaning up
         clean_message = [self.clean_text(message)]
@@ -141,12 +145,62 @@ class Interaction:
         # PREDICTIONS
         PRED = model.predict(message_vectors)
         PRED = LABEL_ENCODER.classes_[np.argmax(PRED)]
+        print(PRED)
 
-        # Getting the response
-        RESPONSE = self.responses(PRED)
+        # SETTING THE VOICE RECOGNITION AUTHENTICATION PREDICTED VALUE AS False
+        AUTH = False
 
-        # Returning the predicted value
-        return RESPONSE
+        # Checking if the predicted label was password
+        if PRED == "password":
+            # Converting the extracted audio byte data into a wave format
+            sr, data = read(io.BytesIO(wav_data))
+
+            # Creating the byte object class and writing the extracted sound wave file
+            # to the byte object as bytes.
+            bytes_wav = bytes()
+            byte_io = io.BytesIO(bytes_wav)
+            write(byte_io, sr, data)            # Writing as a byte-type data
+
+            # Saving the byte-type data as a wav file
+            output_wav = byte_io.read()
+
+            # Getting the full path to the wav file, then save.
+            WAV_FILE = os.path.sep.join([FULL_PATH, 'voice/input_voice.wav'])
+            # Saving the audio data as a wave file format
+            with open(WAV_FILE, "wb") as wave_file:
+                wave_file.write(output_wav)
+                wave_file.close()
+
+            # Creating an instance of the sound prediction class by passing the full
+            # Path to the saved wav file format.
+            SOUND_PREDICTION_CLASS = SoundPrediction(WAV_FILE)
+
+            # Making prediction on the INPUT VOICE DATA
+            SOUND_PREDICTION = SOUND_PREDICTION_CLASS.make_prediction()
+            os.remove("voice/input_voice.wav")
+            print(SOUND_PREDICTION)
+
+            # IF predicted voice is chinedu, execute the code block below.
+            if SOUND_PREDICTION == "chinedu":
+                AUTH = True
+                RESPONSE = self.responses("chinedu")
+
+            # If predicted voice is not chinedu execute the code block below
+            else:
+                RESPONSE = self.responses(PRED)
+
+            # Returning the final values and verified authentication
+            return RESPONSE, AUTH
+
+        # If the PRED value is not password, execute the code below.
+        else:
+            # Getting the response
+            RESPONSE = self.responses(PRED)
+
+            # Returning the predicted value
+            return RESPONSE, AUTH
+
+
 
     # Creating a function for running the main interaction function
     def MainInteraction(self):
@@ -164,8 +218,11 @@ class Interaction:
                     # Converting the audio data into textual data
                     msg = r.recognize_google(audio)
 
-                # Getting the predicted values for the textual data
-                message = self.chat(msg)
+                # Getting the predicted values for the textual data and audio
+                wav_data = audio.get_wav_data()
+                message, AUTH = self.chat(msg, wav_data)
+
+
                 # Displaying the message
                 print(f"Bee-A: {message}")
                 google_speech(message)
@@ -173,4 +230,31 @@ class Interaction:
             # Exception rule if the conditions are not met.
             except:
                 sleep(2)
-                continue 
+                continue
+
+
+
+
+
+
+
+        #     # Creating a function for running the main interaction function
+        # def MainInteraction(self):
+        #     while True:
+        #         with sr.Microphone() as source:
+        #             print("Bee-A: Say something!!!")
+        #             # Removing background noise
+        #             r.adjust_for_ambient_noise(source)
+        #             # Recording the input sound wave data by listening.
+        #             audio = r.listen(source)
+        #             print("Bee-A: Recognizing..")
+        #             # Converting the audio data into textual data
+        #             msg = r.recognize_google(audio)
+        #
+        #         # Getting the predicted values for the textual data and audio
+        #         wav_data = audio.get_wav_data()
+        #         message, AUTH = self.chat(msg, wav_data)
+        #
+        #         # Displaying the message
+        #         print(f"Bee-A: {message}")
+        #         google_speech(message)

@@ -24,10 +24,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from collections import Counter
 import speech_recognition as sr
+from twilio.rest import Client
 from datetime import datetime, timedelta
 from key.encryption import Encryption
 from FASGDIII_soundwave_recogntion.sound_recognition import SoundPrediction
 from FASGDIII_facial_recognition.facial_recognition import FacialPrediction
+
 # from FASGDIII_gesture_recognition.gesture_recognition import GesturePredict
 
 
@@ -39,13 +41,41 @@ decrpyted_keys = Encryption()
 
 # Configuring the cloudinary server
 cloudinary.config(cloud_name="facial-acoustic-sound-waves-and-gesture-recognition",
-                  api_key=decrpyted_keys.Decrypt()[1],
-                  api_secret=decrpyted_keys.Decrypt()[2])
+                  api_key=decrpyted_keys.CloudinaryDecrypt()[1],
+                  api_secret=decrpyted_keys.CloudinaryDecrypt()[2])
 
 
-# Creating a function to execute the sound model
-def ExecSoundModel():
-    pass
+# CONFIGURING THE TWILIO API SERVICE FUNCTION FOR SENDING
+# NOTIFICATION SMS
+def send_sms(video_url="Unavailable Now."):
+    # Setting the numbers
+    twilio_number = "+12513129747"
+    destination_number = "+2347069100782"
+
+    # Getting the account_sid, and auth_token
+    account_sid = decrpyted_keys.TwilioDecrypt()[0]
+    auth_token = decrpyted_keys.TwilioDecrypt()[1]
+
+    # Logging into the application programming interface for twilio.
+    client = Client(account_sid, auth_token)
+
+    # Creating the body of the text message
+    body = f"""
+    
+    Hello, Someone was detected on camera two. 
+
+    Please open your mobile application to view the recorded frames, or click on this link to view it live. 
+        
+    Link: {video_url}
+
+    """
+
+    # Sending the sms message
+    message = client.messages.create(
+        body=body,
+        from_=twilio_number,
+        to=destination_number
+    )
 
 
 # Creating a common class
@@ -71,8 +101,8 @@ def send_email(VIDEO_FILE):
 
             <style>
                 body{display: flex; align-content: center; justify-content: center; background-color: white;}
-                p{margin-left: 16px;  font-size: 12px; color: black; font-family: 'David Libre', serif;}
-                h2{margin-left: 10px; color: red; font-family: 'David Libre', serif; text-align: center; font-size: 40px;}
+                p{margin-left: 16px;  color: black; font-family: 'David Libre', serif;}
+                h2{margin-left: 10px; color: red; font-family: 'David Libre', serif; text-align: center; font-size: 45px;}
             </style>
             </head>
 
@@ -90,7 +120,7 @@ def send_email(VIDEO_FILE):
     """
     SENDER_EMAIL = "fasgd.alert@gmail.com"
     RECEIVER_EMAIL = "cboy.chinedu@gmail.com"
-    PASSWORD = decrpyted_keys.Decrypt()[0]
+    PASSWORD = decrpyted_keys.CloudinaryDecrypt()[0]
 
     # Create a multipart message and set the headers
     message = MIMEMultipart()
@@ -239,7 +269,7 @@ class MainFunction:
             predicted_names.append(result_names)
 
             # FIND THE MOST PREDICTED NAME IN THE LIST
-            if saving_count == 20:
+            if saving_count == 10:
                 # Find the most occurred predicted names in the predicted_names list
                 most_occured = Counter(predicted_names).most_common()
                 # Extracting the values
@@ -257,7 +287,6 @@ class MainFunction:
                     # Record the frames for 50 counts
                     VIDEO_FILE = self.record_frame()
                     send_email(VIDEO_FILE)
-                    saving_count = 0
 
                     try:
                         # SEND THE RECORDED SAVED FRAMES TO THE MOBILE APPLICATION OR ONLINE SERVER
@@ -270,18 +299,19 @@ class MainFunction:
 
                         # Getting the response if the video was sent
                         database_response = requests.post(URL, data=data)
+                        send_sms(video_response["secure_url"])
 
                         # Converting the response back into a json readable format
                         database_response = json.loads(database_response.text)
+                        saving_count = 0
 
                     except:
-                        pass
+                        send_sms()
+                        saving_count = 0
 
                 else:
                     saving_count = 0
 
-            else:
-                pass
 
             # # Get the ROI
             # roi = frame[top:bottom, right:left]
