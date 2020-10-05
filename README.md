@@ -133,7 +133,16 @@ The cameras which are positioned at specific areas, scans the face seen in view 
 Thus, if the subject face has been registered on the system like that of the owner and it runs a scan nothing really happens. However, if the subject's face has not been registered on the security system and it runs a scan, this causes the system to either sound an alarm or send notification to the owner's mobile application.
 
  </p>
+<br> 
 
+<p> 
+
+FASGD-III MOBILE <a href="https://github.com/BuildForSDGCohort2/Team-358-mobile"> <b> Link </b> </a> <br>
+
+FASGD-III BACKEND <a href="https://github.com/BuildForSDGCohort2/Team-358-backend"> <b> Link </b> </a> <br> 
+
+
+</p> 
 
 
 
