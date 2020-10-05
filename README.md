@@ -137,9 +137,9 @@ Thus, if the subject face has been registered on the system like that of the own
 
 <p> 
 
-FASGD-III MOBILE <a href="https://github.com/BuildForSDGCohort2/Team-358-mobile"> <b> Link </b> </a> <br>
+<b> FASGD-III MOBILE: </b>  <a href="https://github.com/BuildForSDGCohort2/Team-358-mobile"> <b> Link </b> </a> <br>
 
-FASGD-III BACKEND <a href="https://github.com/BuildForSDGCohort2/Team-358-backend"> <b> Link </b> </a> <br> 
+<b> FASGD-III BACKEND: </b> <a href="https://github.com/BuildForSDGCohort2/Team-358-backend"> <b> Link </b> </a> <br> 
 
 
 </p> 
